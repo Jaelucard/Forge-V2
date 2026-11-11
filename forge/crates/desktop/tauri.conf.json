@@ -1,0 +1,15 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Forge V2",
+  "version": "0.1.0",
+  "identifier": "com.jaelucard.forge-v2",
+  "build": {"frontendDist": "../../dist"},
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [{"label": "main", "title": "Forge V2", "width": 1360, "height": 900, "minWidth": 960, "minHeight": 650, "backgroundColor": "#F5F2EC"}],
+    "security": {
+      "csp": "default-src 'self'; connect-src 'self' ipc: http://ipc.localhost; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'none'"
+    }
+  },
+  "bundle": {"active": true, "targets": ["app"], "icon": ["icons/icon.png"], "category": "DeveloperTool", "shortDescription": "A personal GP Editorial workspace", "macOS": {"minimumSystemVersion": "13.0"}}
+}

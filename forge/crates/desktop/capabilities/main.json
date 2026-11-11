@@ -1,0 +1,7 @@
+{
+  "identifier": "main",
+  "description": "Local Forge window only",
+  "local": true,
+  "windows": ["main"],
+  "permissions": ["core:default", "allow-dispatch"]
+}

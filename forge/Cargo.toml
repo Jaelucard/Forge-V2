@@ -1,0 +1,33 @@
+[workspace]
+members = ["crates/domain", "crates/core", "crates/grok", "crates/desktop", "crates/ui"]
+default-members = ["crates/domain", "crates/core", "crates/grok", "crates/desktop"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+rust-version = "1.88"
+
+[workspace.dependencies]
+forge-domain = { path = "crates/domain" }
+forge-core = { path = "crates/core" }
+forge-grok = { path = "crates/grok" }
+serde = { version = "=1.0.229", features = ["derive"] }
+serde_json = "1.0"
+uuid = { version = "=1.29.2", features = ["v4", "js", "serde"] }
+tokio = { version = "=1.54.1", features = ["rt-multi-thread", "macros", "process", "io-util", "sync", "time"] }
+rusqlite = { version = "=0.41.1", features = ["bundled"] }
+tempfile = "3"
+
+[profile.release]
+opt-level = "s"
+lto = "thin"
+codegen-units = 1
+strip = true
+
+[profile.dev]
+debug = 1
+
+[profile.release.package.forge-ui]
+strip = "debuginfo"

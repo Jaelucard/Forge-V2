@@ -1,0 +1,12 @@
+[build]
+target = "index.html"
+dist = "dist"
+public_url = "./"
+
+[serve]
+addresses = ["127.0.0.1"]
+port = 1427
+open = false
+
+[watch]
+ignore = ["target", "dist", ".tools", ".data", ".evidence"]
